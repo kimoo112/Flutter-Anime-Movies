@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "344005987112",
+    "project_id": "firbaseloginkimo",
+    "storage_bucket": "firbaseloginkimo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:344005987112:android:6a8d00cfd8678fb71dde1d",
+        "android_client_info": {
+          "package_name": "com.example.firbase_signup_signin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "344005987112-rh5kotp5f9h1blapnrqgnb65r01uddji.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBu1es73jWmjvinY_2flwLCqeEwcL_uvE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "344005987112-rh5kotp5f9h1blapnrqgnb65r01uddji.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
