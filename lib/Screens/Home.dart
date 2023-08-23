@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_constructors, unused_import, prefer_const_literals__create_immutables, non_constant_identifier_names, file_names, prefer_const_literals_to_create_immutables, unused_local_variable
 
 import 'package:flutter/material.dart';
-import 'package:gradient_ui_widgets/gradient_ui_widgets.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:molten_navigationbar_flutter/molten_navigationbar_flutter.dart';
 import 'package:naruto/widgets/drawer.dart';
@@ -56,8 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     color: cwhite,
                   )
                 : Icon(
-                                        Iconsax.moon,
-
+                    Iconsax.moon,
                     color: cblack2,
                   ),
           ),
@@ -72,142 +70,97 @@ class _HomeScreenState extends State<HomeScreen> {
           SingleChildScrollView(
             child: Padding(
               padding: const EdgeInsets.all(8.0),
-              child: SizedBox(
-                width: double.infinity,
-                child: SingleChildScrollView(
-                  physics: BouncingScrollPhysics(),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      SizedBox(
-                        height: 11,
+              child: SingleChildScrollView(
+                physics: BouncingScrollPhysics(),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      height: 11,
+                    ),
+                    Text(
+                      "WELCOME TO",
+                      style: TextStyle(
+                        fontSize: KWidth * 0.11,
+                        fontWeight: FontWeight.w600,
+                        color: isDarkMode ? cwhite : cblack2,
                       ),
-                      Text(
-                        "WELCOME TO",
-                        style: TextStyle(
-                          fontSize: KWidth * 0.11,
-                          fontWeight: FontWeight.w600,
-                          color: isDarkMode ? cwhite : cblack2,
+                    ),
+                    Text(
+                      "NARUTO MOVIES",
+                      style: TextStyle(
+                        fontSize: KWidth * 0.063,
+                        fontWeight: FontWeight.w600,
+                        color: isDarkMode ? cyellow : corangee,
+                      ),
+                    ),
+                    isDarkMode ? SearchBarDM() : SearchBarLM(),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Trending",
+                          textAlign: TextAlign.left,
+                          style: TextStyle(
+                              color: isDarkMode ? cwhite : cblack2,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600
+                              // fontWeight: FontWeight.w700,
+                              ),
+                          textDirection: TextDirection.ltr,
                         ),
-                      ),
-                      Text(
-                        "NARUTO MOVIES",
-                        style: TextStyle(
-                          fontSize: KWidth * 0.063,
-                          fontWeight: FontWeight.w600,
-                          color: isDarkMode ? cyellow : corangee,
+                        seeAllButton(context, TrendingScreen(), cyellow)
+                      ],
+                    ),
+                    SizedBox(height: 20),
+                    TrendingAnime(),
+                    SizedBox(
+                      height: 40,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Anime Movies",
+                          textAlign: TextAlign.left,
+                          style: TextStyle(
+                              color: isDarkMode ? cwhite : cblack2,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600),
+                          textDirection: TextDirection.ltr,
                         ),
-                      ),
-                      
-                      isDarkMode ?SearchBarDM() :SearchBarLM(),
-                      SizedBox(
-                        height: 30,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "Trending",
-                            textAlign: TextAlign.left,
-                            style: TextStyle(
-                                color: isDarkMode ? cwhite : cblack2,
-                                fontSize: 18,
-                                fontWeight: FontWeight.w600
-                                // fontWeight: FontWeight.w700,
-                                ),
-                            textDirection: TextDirection.ltr,
-                          ),
-                          TextButton(
-                              onPressed: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            TrendingScreen()));
-                              },
-                              child: Text(
-                                "See All",
-                                style: TextStyle(
-                                    color: isDarkMode ? cyellow : corangee,
-                                    fontWeight: FontWeight.w600),
-                              ))
-                        ],
-                      ),
-                      SizedBox(height: 20),
-                      TrendingAnime(),
-                      SizedBox(
-                        height: 40,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "Anime Movies",
-                            textAlign: TextAlign.left,
-                            style: TextStyle(
-                                color: isDarkMode ? cwhite : cblack2,
-                                fontSize: 18,
-                                fontWeight: FontWeight.w600
-                                // fontWeight: FontWeight.w700,
-                                ),
-                            textDirection: TextDirection.ltr,
-                          ),
-                          TextButton(
-                              onPressed: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            AnimeMoviesScreen()));
-                              },
-                              child: Text(
-                                "See All",
-                                style: TextStyle(
-                                    color: corangee,
-                                    fontWeight: FontWeight.w600),
-                              ))
-                        ],
-                      ),
-                      SizedBox(height: 20),
-                      AnimeMovies(),
-                      SizedBox(
-                        height: 40,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "Anime Series ",
-                            textAlign: TextAlign.left,
-                            style: TextStyle(
-                                color: isDarkMode ? cwhite : cblack2,
-                                fontSize: 18,
-                                fontWeight: FontWeight.w600
-                                // fontWeight: FontWeight.w700,
-                                ),
-                            textDirection: TextDirection.ltr,
-                          ),
-                          TextButton(
-                              onPressed: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            AnimeSeriesScreen()));
-                              },
-                              child: Text(
-                                "See All",
-                                style: TextStyle(
-                                    color: credd, fontWeight: FontWeight.w600),
-                              ))
-                        ],
-                      ),
-                      SizedBox(height: 20),
-                      AnimeSeries(),
-                      SizedBox(height: 60),
-
-                    ],
-                  ),
+                        seeAllButton(context, AnimeMoviesScreen(), corangee)
+                      ],
+                    ),
+                    SizedBox(height: 20),
+                    AnimeMovies(),
+                    SizedBox(
+                      height: 40,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Anime Series ",
+                          textAlign: TextAlign.left,
+                          style: TextStyle(
+                              color: isDarkMode ? cwhite : cblack2,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600
+                              // fontWeight: FontWeight.w700,
+                              ),
+                          textDirection: TextDirection.ltr,
+                        ),
+                        seeAllButton(context, AnimeSeriesScreen(), credd)
+                      ],
+                    ),
+                    SizedBox(height: 20),
+                    AnimeSeries(),
+                    SizedBox(height: 60),
+                  ],
                 ),
               ),
             ),
@@ -215,5 +168,34 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
     );
+  }
+
+  TextButton seeAllButton(BuildContext context, Widget widget, Color color) {
+    return TextButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            PageRouteBuilder(
+              transitionDuration: Duration(milliseconds: 500),
+              transitionsBuilder: (BuildContext context,
+                  Animation<double> animation,
+                  Animation<double> secondaryAnimation,
+                  Widget child) {
+                return FadeTransition(
+                  opacity: animation,
+                  child: child,
+                );
+              },
+              pageBuilder: (BuildContext context, Animation<double> animation,
+                  Animation<double> secondaryAnimation) {
+                return widget;
+              },
+            ),
+          );
+        },
+        child: Text(
+          "See All",
+          style: TextStyle(color: color, fontWeight: FontWeight.w600),
+        ));
   }
 }

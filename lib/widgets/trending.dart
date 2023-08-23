@@ -20,7 +20,7 @@ class TrendingMoviesContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(5.0),
+      padding: const EdgeInsets.symmetric(horizontal:12.0,vertical: 8),
       child: GestureDetector(
         onTap: () {
           Navigator.push(
@@ -29,6 +29,7 @@ class TrendingMoviesContainer extends StatelessWidget {
         child: Container(
           width: double.infinity,
           height: 120,
+          margin:EdgeInsets.all(8),
           decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
@@ -75,21 +76,30 @@ class TrendingMoviesContainer extends StatelessWidget {
                 ),
               ),
               Container(
-                child: ClipRRect(
-                    borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(9),
-                        bottomRight: Radius.circular(9)),
-                    child: Image.network(Kposter, errorBuilder:
-                        (BuildContext context, Object exception,
-                            StackTrace? stackTrace) {
-                      return Padding(
-                        padding: const EdgeInsets.all(20.0),
-                        child: Stack(children: [
-                          LoadingAnimationWidget.staggeredDotsWave(
-                              color: cblack2, size: 33),
-                        ]),
-                      );
-                    })),
+                width: 150,
+                height: double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.vertical(top:Radius.circular(10) ,bottom: Radius.circular(11)),
+                  image: DecorationImage(
+                    image: NetworkImage(Kposter),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                // child: ClipRRect(
+                //     borderRadius: BorderRadius.only(
+                //         topRight: Radius.circular(9),
+                //         bottomRight: Radius.circular(9)),
+                //     child: Image.network(Kposter, errorBuilder:
+                //         (BuildContext context, Object exception,
+                //             StackTrace? stackTrace) {
+                //       return Padding(
+                //         padding: const EdgeInsets.all(20.0),
+                //         child: Stack(children: [
+                //           LoadingAnimationWidget.staggeredDotsWave(
+                //               color: cblack2, size: 33),
+                //         ]),
+                //       );
+                //     })),
               ),
             ],
           ),

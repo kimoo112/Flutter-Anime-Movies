@@ -1,6 +1,7 @@
 // ignore_for_file: unused_local_variable, file_names, unused_import, prefer_const_constructors_in_immutables, non_constant_identifier_names, duplicate_ignore, prefer_const_constructors, avoid_unnecessary_containers, sized_box_for_whitespace, sort_child_properties_last, sort_child_properties_last
 
 import 'package:flutter/material.dart';
+import 'package:naruto/widgets/anime_stars.dart';
 import '../../Constant/colors.dart';
 import '../widgets/button.dart';
 import '../widgets/stars.dart';
@@ -8,10 +9,13 @@ import 'Download/Download.dart';
 
 class DetailsScreen extends StatelessWidget {
   // ignore: non_constant_identifier_names
-  DetailsScreen({super.key, this.Kimage = "", this.Ktitle = "DETAILS"});
+  DetailsScreen({super.key, this.Kimage = "", this.Ktitle = "DETAILS",  this.KRating=4.5});
 
   final String? Kimage;
   final String? Ktitle;
+  final double KRating;
+
+
   @override
   Widget build(BuildContext context) {
     final KHeight = MediaQuery.of(context).size.height;
@@ -59,11 +63,11 @@ class DetailsScreen extends StatelessWidget {
                   child: Align(
                     alignment: Alignment.bottomLeft,
                     child: Container(
-                      decoration: const BoxDecoration(
+                      decoration:  BoxDecoration(
                         gradient: LinearGradient(
                             colors: [
-                              Color.fromARGB(122, 2, 2, 0),
-                              Color.fromARGB(255, 15, 16, 19),
+                              Color.fromARGB(122, 2, 2, 0).withOpacity(.5),
+                              Color.fromARGB(255, 15, 16, 19).withOpacity(.8),
                             ],
                             begin: Alignment.topCenter,
                             end: Alignment.bottomCenter),
@@ -79,7 +83,12 @@ class DetailsScreen extends StatelessWidget {
                       Ktitle!,
                       style: TextStyle(color: cwhite, fontSize: 16),
                     ),
-                    Stars5(),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    StarsRating(
+                      starsValue: KRating,
+                    )
                   ],
                 ),
               ),

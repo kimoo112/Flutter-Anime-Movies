@@ -9,12 +9,12 @@ import '../../Constant/colors.dart';
 class AnimeSeriesContaier extends StatelessWidget {
   const AnimeSeriesContaier({
     super.key,
-    this.KImage = "",
-    this.KMovie = "",
-    this.KEpisodes = "",
-    this.KStar5 = Icons.star,
-    this.KStar4 = Icons.star,
-    this.Kroute,
+   required this.KImage ,
+    required this.KMovie ,
+    required this.KEpisodes ,
+    required this.KStar5 ,
+    required this.KStar4 ,
+    required this.Kroute,
   });
   final KImage;
   final KMovie;

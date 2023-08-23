@@ -17,89 +17,84 @@ class MoviesContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     final KWidth = MediaQuery.of(context).size.width;
 
-    return Stack(
-      alignment: Alignment.center,
-      children: [
-        GestureDetector(
-            onTap: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Kroute));
-            },
-            child: FutureBuilder(
-                future: precacheImage(NetworkImage(Kmovie), context),
-                builder: (BuildContext context, AsyncSnapshot snapshot) {
-                  if (snapshot.connectionState == ConnectionState.waiting) {
-                    return Container(
-                      width: 200,
-                      margin: EdgeInsets.only(right: 20, left: 5),
-                      height: 250,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(55),
-                        gradient: LinearGradient(
-                          colors: [
-                            Color.fromARGB(31, 14, 12, 5),
-                          ],
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter,
-                        ),
+    return GestureDetector(
+        onTap: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => Kroute));
+        },
+        child: FutureBuilder(
+            future: precacheImage(NetworkImage(Kmovie), context),
+            builder: (BuildContext context, AsyncSnapshot snapshot) {
+              if (snapshot.connectionState == ConnectionState.waiting) {
+                return Container(
+                  width: 200,
+                  margin: EdgeInsets.only(right: 20, left: 5),
+                  height: 250,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(55),
+                    gradient: LinearGradient(
+                      colors: [
+                        Color.fromARGB(31, 14, 12, 5),
+                      ],
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                    ),
+                  ),
+                  child: Center(
+                    child: LoadingAnimationWidget.threeArchedCircle(color: corange, size: 55)
+                  ),
+                );
+              } else {
+                return Container(
+                    width: 200,
+                    margin: EdgeInsets.only(right: 20, left: 5),
+                    height: 250,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        
+                        image: NetworkImage(Kmovie,),
+                        fit: BoxFit.cover,
                       ),
-                      child: Center(
-                        child: LoadingAnimationWidget.threeArchedCircle(color: corange, size: 55)
-                      ),
-                    );
-                  } else {
-                    return Container(
-                        width: 200,
-                        margin: EdgeInsets.only(right: 20, left: 5),
-                        height: 250,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            
-                            image: NetworkImage(Kmovie,),
-                            fit: BoxFit.cover,
-                          ),
-                          borderRadius: BorderRadius.circular(55),
-                          boxShadow: [
-                            BoxShadow(
-                              color: cblack2.withOpacity(.5),
-                              spreadRadius: 3,
-                              blurRadius: 7,
-                              offset: Offset(5, 3),
-                            )
-                          ],
-                        ),
-                        child: Align(
-                          alignment: Alignment.bottomLeft,
-                          child: Container(
-                              width: KWidth,
-                              height: 250,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(55),
-                                gradient: LinearGradient(
-                                    colors: [
-                                      Color.fromARGB(68, 2, 2, 0),
-                                      Color.fromARGB(249, 14, 12, 5),
-                                    ],
-                                    begin: Alignment.topCenter,
-                                    end: Alignment.bottomCenter),
-                              ),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  Text(
-                                    Kname,
-                                    style: TextStyle(
-                                        color: cwhitee, letterSpacing: .5),
-                                  ),
-                                  SizedBox(
-                                    height: 7,
-                                  )
+                      borderRadius: BorderRadius.circular(55),
+                      boxShadow: [
+                        BoxShadow(
+                          color: cblack2.withOpacity(.5),
+                          spreadRadius: 1,
+                          blurRadius: 5,
+                          offset: Offset(5, 1),
+                        )
+                      ],
+                    ),
+                    child: Align(
+                      alignment: Alignment.bottomLeft,
+                      child: Container(
+                          width: KWidth,
+                          height: 250,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(55),
+                            gradient: LinearGradient(
+                                colors: [
+                                  Color.fromARGB(68, 2, 2, 0),
+                                  Color.fromARGB(249, 14, 12, 5),
                                 ],
-                              )),
-                        ));
-                  }
-                })),
-      ],
-    );
+                                begin: Alignment.topCenter,
+                                end: Alignment.bottomCenter),
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              Text(
+                                Kname,
+                                style: TextStyle(
+                                    color: cwhitee, letterSpacing: .5),
+                              ),
+                              SizedBox(
+                                height: 7,
+                              )
+                            ],
+                          )),
+                    ));
+              }
+            }));
   }
 }

@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, unused_import
+// ignore_for_file: prefer_const_constructors, unused_import, must_be_immutable
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -14,10 +14,11 @@ import 'Screens/Thebase.dart';
 //   WidgetsFlutterBinding.ensureInitialized();
 //   await Firebase.initializeApp();  runApp(const NarutoApp()); }
 void main() async {
-  runApp(NarutoApp());
 
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  // await Firebase.initializeApp();
+  runApp(NarutoApp());
+
 }
 
 class NarutoApp extends StatelessWidget {
@@ -40,6 +41,7 @@ class NarutoApp extends StatelessWidget {
             ),
           )),
       home: LoginScreen(),
+ 
       
     );
   }

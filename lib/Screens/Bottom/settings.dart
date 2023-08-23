@@ -8,9 +8,14 @@ import '../../Background/aniBc.dart';
 import '../../Constant/colors.dart';
 
   bool isDarkMode = true;
-class SettingsScreen extends StatelessWidget {
+class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
 
+  @override
+  State<SettingsScreen> createState() => _SettingsScreenState();
+}
+
+class _SettingsScreenState extends State<SettingsScreen> {
   @override
   Widget build(BuildContext context) {
 
@@ -26,7 +31,7 @@ class SettingsScreen extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text("Naruto Settings",style: TextStyle(color: cwhite,fontSize: 25),),
+                  child: Text("Naruto Settings",style: TextStyle(color:isDarkMode ? isDarkMode ? cwhite :cblack2 :cblack2,fontSize: 25),),
                 ),
                 SizedBox(height: 5,),
                 Padding(
@@ -35,18 +40,19 @@ class SettingsScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
             
-                      Text("Allow Notification ",style: TextStyle(color: cwhite,fontSize: 18),),
+                      Text("Allow Notification ",style: TextStyle(color: isDarkMode ? cwhite :cblack2,fontSize: 18),),
                       Switcher(
                             value: isDarkMode,
                             size: SwitcherSize.medium,
                             switcherButtonRadius: 50,
+                          
                             enabledSwitcherButtonRotate: !isDarkMode,
                             iconOff: Icons.notification_important_rounded,
                             iconOn: Icons.notifications_sharp,
                             colorOff: cred,
                             colorOn:cgreen,
                             onChanged: (bool state) {
-                              //
+                              
                             },
                           ),
                     ],
@@ -58,7 +64,7 @@ class SettingsScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
             
-                      Text("Notification Sound",style: TextStyle(color: cwhite,fontSize: 18),),
+                      Text("Notification Sound",style: TextStyle(color: isDarkMode ? cwhite :cblack2,fontSize: 18),),
                       Switcher(
                             value: false,
                             size: SwitcherSize.medium,
@@ -80,7 +86,7 @@ class SettingsScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
             
-                      Text("Light Mode",style: TextStyle(color: cwhite,fontSize: 18),),
+                      Text("Light Mode",style: TextStyle(color: isDarkMode ? cwhite :cblack2,fontSize: 18),),
                       Switcher(
                             value: false,
                             size: SwitcherSize.medium,
@@ -93,6 +99,11 @@ class SettingsScreen extends StatelessWidget {
                             onChanged: (bool state) {
                               //
                             },
+                           onTap: (){
+                             setState(() {
+                isDarkMode = !isDarkMode;
+              });
+                          },
                           ),
                     ],
                   ),
@@ -102,7 +113,7 @@ class SettingsScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
             
-                      Text("Check Spelling",style: TextStyle(color: cwhite,fontSize: 18),),
+                      Text("Check Spelling",style: TextStyle(color: isDarkMode ? cwhite :cblack2,fontSize: 18),),
                       Switcher(
                             value: false,
                             size: SwitcherSize.medium,
@@ -125,7 +136,7 @@ class SettingsScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
             
-                      Text("Enable Location",style: TextStyle(color: cwhite,fontSize: 18),),
+                      Text("Enable Location",style: TextStyle(color: isDarkMode ? cwhite :cblack2,fontSize: 18),),
                       Switcher(
                             value: false,
                             size: SwitcherSize.medium,
@@ -147,7 +158,7 @@ class SettingsScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
             
-                      Text("Always Tap keyboard keys",style: TextStyle(color: cwhite,fontSize: 18),),
+                      Text("Always Tap keyboard keys",style: TextStyle(color: isDarkMode ? cwhite :cblack2,fontSize: 18),),
                       Switcher(
                             value: false,
                             size: SwitcherSize.medium,
@@ -169,7 +180,7 @@ class SettingsScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
             
-                      Text("Auto-login",style: TextStyle(color: cwhite,fontSize: 18),),
+                      Text("Auto-login",style: TextStyle(color: isDarkMode ? cwhite :cblack2,fontSize: 18),),
                       Switcher(
                             value: false,
                             size: SwitcherSize.medium,
@@ -191,7 +202,7 @@ class SettingsScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
             
-                      Text("Sound Recognition",style: TextStyle(color: cwhite,fontSize: 18),),
+                      Text("Sound Recognition",style: TextStyle(color: isDarkMode ? cwhite :cblack2,fontSize: 18),),
                       Switcher(
                             value: false,
                             size: SwitcherSize.medium,
@@ -213,7 +224,7 @@ class SettingsScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
             
-                      Text("Dim flashing Lights",style: TextStyle(color: cwhite,fontSize: 18),),
+                      Text("Dim flashing Lights",style: TextStyle(color: isDarkMode ? cwhite :cblack2,fontSize: 18),),
                       Switcher(
                             value: false,
                             size: SwitcherSize.medium,
@@ -235,7 +246,7 @@ class SettingsScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
             
-                      Text("Enable Dictation",style: TextStyle(color: cwhite,fontSize: 18),),
+                      Text("Enable Dictation",style: TextStyle(color: isDarkMode ? cwhite :cblack2,fontSize: 18),),
                       Switcher(
                             value: false,
                             size: SwitcherSize.medium,
@@ -257,7 +268,7 @@ class SettingsScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
             
-                      Text("Allow Download",style: TextStyle(color: cwhite,fontSize: 18),),
+                      Text("Allow Download",style: TextStyle(color: isDarkMode ? cwhite :cblack2,fontSize: 18),),
                       Switcher(
                             value: false,
                             size: SwitcherSize.medium,
