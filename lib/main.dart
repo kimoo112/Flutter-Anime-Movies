@@ -10,27 +10,16 @@ import 'package:naruto/Screens/Login/Signin.dart';
 import 'package:naruto/Screens/Login/signup.dart';
 import 'Screens/Thebase.dart';
 
-// Future<void> main() async {
-//   WidgetsFlutterBinding.ensureInitialized();
-//   await Firebase.initializeApp();  runApp(const NarutoApp()); }
 void main() async {
-
   WidgetsFlutterBinding.ensureInitialized();
   // await Firebase.initializeApp();
   runApp(NarutoApp());
-
 }
-
 class NarutoApp extends StatelessWidget {
-   NarutoApp({super.key});
-  bool isDarkMode = true;
-
-  // This widget is the root of your application.
+  const NarutoApp({super.key});
   @override
   Widget build(BuildContext context) {
-
     return MaterialApp(
-      
       debugShowCheckedModeBanner: false,
       title: 'Naruto App',
       theme: ThemeData(
@@ -41,8 +30,6 @@ class NarutoApp extends StatelessWidget {
             ),
           )),
       home: LoginScreen(),
- 
-      
     );
   }
 }

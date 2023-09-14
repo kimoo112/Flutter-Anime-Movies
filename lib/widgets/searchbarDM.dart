@@ -21,8 +21,6 @@ class _SearchBarDMState extends State<SearchBarDM> {
     TextEditingController textController = TextEditingController();
     return Padding(
       padding: const EdgeInsets.only(top: 10.0, right: 10, left: 10),
-
-      
       child: AnimSearchBar(
         color: cyellow,
         textFieldColor: cyellow,

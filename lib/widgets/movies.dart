@@ -85,6 +85,7 @@ class MoviesContainer extends StatelessWidget {
                             children: [
                               Text(
                                 Kname,
+                                textAlign: TextAlign.center,
                                 style: TextStyle(
                                     color: cwhitee, letterSpacing: .5),
                               ),
