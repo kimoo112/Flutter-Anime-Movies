@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, file_names
 
 import 'package:flutter/material.dart';
-import 'package:naruto/Models/anime_series_model%20copy.dart';
+import 'package:naruto/Models/anime_movies_model.dart';
 import 'package:naruto/widgets/movies.dart';
 
 import '../../Background/aniBc.dart';
