@@ -1,16 +1,7 @@
-# firbase_signup_signin
+# NARUTO MOVIES
 
 A new Flutter project.
 
-## Getting Started
+![Logo2](https://github.com/kimoo112/Flutter-Anime-Movies/assets/130873071/7835478b-d576-4a3c-adc1-4b043f744993)
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Design](https://github.com/kimoo112/Flutter-Anime-Movies/assets/130873071/28031184-def1-4c4d-be99-298f90ef02ee)
